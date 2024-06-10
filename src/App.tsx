@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import  { useState, useEffect } from 'react';
 import './App.css';
 
+import Header from './components/Header';
+import Main from './components/Main';
+import dataReviews from './data/data.json';
+
+
+interface Review {
+  name: string;
+  review: string;
+  date: string;
+}
+
 function App() {
+  const [reviews, setReviews] = useState<Review[]>([]);
+
+  useEffect(() => {
+    try {
+   
+      const reviewsArray: Review[] = Object.values(dataReviews.ru).map(review => ({
+        name: review.name,
+        review: review.review,
+        date: review.date,
+      }));
+      setReviews(reviewsArray);
+    } catch (error) {
+      console.error("Неполучилось получить данные: ", error);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Main reviews={reviews} />
+    </>
   );
 }
 
