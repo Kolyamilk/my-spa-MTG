@@ -7,21 +7,15 @@ body {
     height: auto !important;
     height: 100%;
     width: 100%;
-
 }
 
 header {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+52,ffffff+57,f2f2f2+100 */
     background: rgb(255, 114, 0);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 50px;
-
+    padding: 20px 50px;
 }
-
 .reviews {
     display: flex;
     flex-direction: column;
@@ -38,6 +32,8 @@ header {
     margin: 10px;
     padding: 15px;
     border-radius: 10px;
+    width: 1000px;
+
 }
 
 .nav-paginate {
@@ -56,7 +52,6 @@ header {
     /* Фоновый цвет, чтобы содержимое под ним не просвечивало */
     z-index: 1000;
     /* Устанавливаем z-index, чтобы nav был поверх других элементов */
-
     /* Добавляем тень для визуального отделения от содержимого страницы */
 }
 

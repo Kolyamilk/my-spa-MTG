@@ -25,7 +25,7 @@ function App() {
       }));
       setReviews(reviewsArray);
     } catch (error) {
-      console.error("Неполучилось получить данные: ", error);
+      console.error("Неполучилось получить данные об отзывах: ", error);
     }
   }, []);
 
