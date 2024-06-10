@@ -5,7 +5,7 @@ type State = {
 };
 
 class Watch extends React.Component<{}, State> {
-    timerID!: number; // Изменил тип на number
+    timerID!: number;
     constructor(props: {}) {
         super(props);
         this.state = { time: new Date().toLocaleTimeString() };
