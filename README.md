@@ -1,3 +1,8 @@
+Для запуска проекта в консоле:
+1: перейти в прокет cd my-spa-MTG
+2: Установить пакеты npm install redux react-redux @reduxjs/toolkit redux-thunk
+3: Можно запускать npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
