@@ -1,6 +1,6 @@
 import React from 'react';
 import Watch from './Watch';
-import logo from '../assets/mtgLOGO.jpeg'
+import logo from '../assets/logo-1x.png'
 
 class Header extends React.Component {
     render() {
@@ -10,13 +10,14 @@ class Header extends React.Component {
                 <img src={logo} alt="Logo" />
 
                 {/* Выпадающий список языков */}
+                <Watch />
                 <select>
                     <option value="ru">RU</option>
                     <option value="en">EN</option>
                 </select>
 
-                {/* Компонент Watch, отображающий текущее время */}
-                <Watch />
+
+            
             </header>
         );
     }

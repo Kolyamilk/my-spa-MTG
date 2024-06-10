@@ -1,18 +1,63 @@
+body {
+    position: relative;
+    font: 400 1em / 1.4em "Helvetica Neue", Tahoma, Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #000000;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    width: 100%;
+
+}
+
+header {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+52,ffffff+57,f2f2f2+100 */
+    background: rgb(255, 114, 0);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
 .review-block {
-    background-color: antiquewhite;
-    border: 1px solid gray;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(56, 56, 56);
     margin: 10px;
     padding: 15px;
+    border-radius: 10px;
 }
 
 .nav-paginate {
-    position: fixed; /* Закрепляем элемент */
-    bottom: 0; /* Располагаем элемент внизу экрана */
-    left: 0; /* Для ширины на 100% экрана, начинаем от левого края */
-    width: 100%; /* Растягиваем на всю ширину экрана */
-    background-color: #fff; /* Фоновый цвет, чтобы содержимое под ним не просвечивало */
-    z-index: 1000; /* Устанавливаем z-index, чтобы nav был поверх других элементов */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Добавляем тень для визуального отделения от содержимого страницы */
+    position: fixed;
+    /* Закрепляем элемент */
+    bottom: 0;
+    /* Располагаем элемент внизу экрана */
+    padding: 10px;
+    /* Для ширины на 100% экрана, начинаем от левого края */
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Растягиваем на всю ширину экрана */
+    background-color: rgba(255, 255, 255, 0.488);
+    /* Фоновый цвет, чтобы содержимое под ним не просвечивало */
+    z-index: 1000;
+    /* Устанавливаем z-index, чтобы nav был поверх других элементов */
+
+    /* Добавляем тень для визуального отделения от содержимого страницы */
 }
 
 .nav-paginate ul {
@@ -21,20 +66,39 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-    justify-content: center; /* Центрируем элементы списка, если нужно */
+    justify-content: center;
+    /* Центрируем элементы списка, если нужно */
 }
 
 .nav-paginate ul li {
-    margin-right: 10px; /* Отступы между элементами списка */
+    margin-right: 10px;
+    /* Отступы между элементами списка */
 }
 
 .nav-paginate ul li a {
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    color: #000; /* Цвет текста */
+    text-decoration: none;
+    /* Убираем подчеркивание ссылок */
+    color: #000;
+    font-size: 2rem;
+    margin: 10px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* Цвет текста */
     /* Дополнительные стили для ссылок, если нужно */
 }
+
 .nav-paginate ul li.active a {
-    background-color: orange; /* Оранжевый фон для активной ссылки */
-    color: white; /* Белый цвет текста для лучшего контраста */
-    border-radius: 5px; /* Немного скругляем углы для лучшего вида */
+    background-color: orange;
+    color: #000;
+    border-radius: 10px;
+
+
+    /* Оранжевый фон для активной ссылки */
+
+    /* Белый цвет текста для лучшего контраста */
+
+    /* Немного скругляем углы для лучшего вида */
 }

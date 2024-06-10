@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import imgReviews from '../assets/people-reviews.png'
 // Определим типы для пропсов компонента Review
 const currentPage = 1;
 type ReviewProps = {
@@ -7,11 +7,18 @@ type ReviewProps = {
     review: string;
     date: string;
 };
+const formatName = (fullName: string): string => {
+    const names = fullName.trim().split(' ');
+    if (names.length > 1) {
+        // Берем фамилию и первую букву имени, добавляя точку
+        return `${names[0]} ${names[1].charAt(0)}.`;
+    }
+    return fullName; // В случае, если есть только одно слово, возвращаем его как есть
+};
 
 const Review: React.FC<ReviewProps> = ({ name, review, date }) => (
     <div className='review-block'>
-
-        <h3>{name}</h3>
+        <h3>{formatName(name)}</h3>
         <p>{review}</p>
         <span>{date}</span>
     </div>
@@ -38,7 +45,7 @@ const Pagination: React.FC<PaginationProps> = ({
     }
     return (
         <nav className='nav-paginate'>
-            <ul>
+            <ul >
                 {pageNumbers.map(number => (
                     <li key={number} className={currentPage === number ? 'active' : ''}>
                         <a onClick={() => paginate(number)} href="#!">
@@ -71,8 +78,8 @@ const Main: React.FC<MainProps> = ({ reviews }) => {
     // Сменить страницу
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
     return (
-        <div>
-            <h1>Отзывы:</h1>
+        <div className='reviews'>
+            <h1>Отзывы: <img src={imgReviews} alt="" /></h1>
             {currentReviews.map((review, index) => (
                 <Review key={index} name={review.name} review={review.review} date={review.date} />
             ))}
